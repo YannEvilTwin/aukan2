@@ -921,95 +921,123 @@ body {
 
 
 
-
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
 
 /**
- * responsive for large than 575px screen
+ * responsive for smaller than 576px screen
  */
-
-@media (min-width: 575px) {
-
-  /**
-   * REUSED STYLE
-   */
+ @media (max-width: 575px) {
 
   .container {
-    max-width: 540px;
-    width: 100%;
-    margin-inline: auto;
+    padding: 0 15px; /* Añadido padding para evitar que el contenido se pegue a los bordes */
+    max-width: 100%;
   }
 
-
-
-  /**
-   * HEADER
-   */
-
-  .header .logo img {
-    width: 160px;
+  .hero {
+    padding-block-start: 100px; /* Reducido el padding superior */
   }
 
+  .hero .section-subtitle {
+    letter-spacing: 5px;
+    margin-top: 100px;
+}
 
-
-  /**
-   * UPCOMING
-   */
-
-  .upcoming-card.left .card-meta {
-    left: auto;
-    right: -15%;
+  .hero-title {
+    font-size: 1.8rem; /* Ajustado tamaño de fuente */
   }
 
-  .upcoming-card.right .card-meta {
-    left: 25%;
+  .hero-banner img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
   }
 
+  .hero-banner-bg {
+    position: absolute;
+    bottom: 9px;
+    z-index: -2;
+}
 
+  /* EQUIPO  */
 
-  /**
-   * FOOTER
-   */
-
-  .footer-top .container {
-    grid-template-columns: 1fr 1fr;
+  .card {
+    width: 100%; /* Asegura que las tarjetas ocupen todo el ancho disponible */
+    margin: 10px 0; /* Reduce el margen entre las tarjetas */
+  }
+  
+  .card-content {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
+  .slider {
+    height: auto; /* Permite que el slider se ajuste automáticamente */
+  }
 }
 
 
+/**
+ * responsive for larger than 575px screen
+ */
+@media (min-width: 575px) {
 
+  .container {
+    padding: 0 15px; /* Añadido padding para evitar que el contenido se pegue a los bordes */
+    max-width: 100%;
+  }
+
+  .hero {
+    padding-block-start: 100px; /* Reducido el padding superior */
+  }
+
+  .hero .section-subtitle {
+    letter-spacing: 5px;
+    margin-top: 100px;
+}
+
+  .hero-title {
+    font-size: 1.8rem; /* Ajustado tamaño de fuente */
+  }
+
+  .hero-banner img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  .hero-banner-bg {
+    position: absolute;
+    bottom: 9px;
+    z-index: -2;
+}
+
+  /* EQUIPO  */
+
+  .card {
+    width: 100%; /* Asegura que las tarjetas ocupen todo el ancho disponible */
+    margin: 10px 0; /* Reduce el margen entre las tarjetas */
+  }
+  
+  .card-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .slider {
+    height: auto; /* Permite que el slider se ajuste automáticamente */
+  }
+}
 
 
 /**
- * responsive for large than 768px screen
+ * responsive for larger than 768px screen
  */
-
 @media (min-width: 768px) {
 
-  /**
-   * CUSTOM PROPERTY
-   */
-
   :root {
-
-    /**
-     * TYPOGRAPHY
-     */
-
-    /* font size */
     --fontSize-1: 6.5rem;
     --fontSize-2: 3.2rem;
-
   }
-
-
-
-  /**
-   * REUSED STYLE
-   */
 
   .container {
     max-width: 720px;
@@ -1018,12 +1046,6 @@ body {
   .h1 {
     line-height: 1;
   }
-
-
-
-  /**
-   * HERO
-   */
 
   .hero .section-subtitle {
     letter-spacing: 10px;
@@ -1039,12 +1061,6 @@ body {
     transform-origin: bottom;
     z-index: -1;
   }
-
-
-
-  /**
-   * UPCOMING
-   */
 
   .upcoming-card::before {
     height: 110px;
@@ -1071,21 +1087,9 @@ body {
     --fontSize-1: 5rem;
   }
 
-
-
-  /**
-   * NEWS 
-   */
-
   .news-list {
     grid-template-columns: 1fr 1fr;
   }
-
-
-
-  /**
-   * CUSTOM CURSOR
-   */
 
   .cursor {
     display: block;
@@ -1113,44 +1117,22 @@ body {
     opacity: 0.75;
   }
 
+ /* EQUIPO */
+
+  .card {
+    width: 30%; /* Tres tarjetas en fila en pantallas medianas */
+  }
 }
 
-
-
-
-
 /**
- * responsive for large than 992px screen
+ * responsive for larger than 992px screen
  */
-
 @media (min-width: 992px) {
 
-  /**
-   * CUSTOM PROPERTY
-   */
-
   :root {
-
-    /**
-     * TYPOGRAPHY
-     */
-
-    /* font size */
     --fontSize-2: 4.5rem;
-
-    /**
-     * SPACING
-     */
-
     --section-spacing: 100px;
-
   }
-
-
-
-  /**
-   * REUSED STYLE
-   */
 
   .container {
     max-width: 960px;
@@ -1159,12 +1141,6 @@ body {
   .h2 {
     line-height: 1.1;
   }
-
-
-
-  /**
-   * HEADER
-   */
 
   .nav-toggle-btn {
     display: none;
@@ -1190,21 +1166,9 @@ body {
     text-align: center;
   }
 
-
-
-  /**
-   * HERO
-   */
-
   .hero-banner-bg {
     transform: scale(1.2);
   }
-
-
-
-  /**
-   * UPCOMING
-   */
 
   .upcoming-item {
     display: grid;
@@ -1226,41 +1190,25 @@ body {
     left: 50%;
   }
 
-
-
-  /**
-   * NEWS
-   */
-
   .news-list {
     grid-template-columns: repeat(3, 1fr);
   }
-
-
-
-  /**
-   * FOOTER
-   */
 
   .footer-top .container {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  /* EQUIPO */
+
+  .card {
+    width: 22%; /* Cuatro tarjetas en fila en pantallas grandes */
+  }
 }
 
-
-
-
-
 /**
- * responsive for large than 1200px screen
+ * responsive for larger than 1200px screen
  */
-
 @media (min-width: 1200px) {
-
-  /**
-   * REUSED STYLE
-   */
 
   .container {
     max-width: 1140px;
@@ -1269,12 +1217,6 @@ body {
   .section-text {
     margin-block-end: 60px;
   }
-
-
-
-  /**
-   * HERO
-   */
 
   .hero {
     padding-block-start: 250px;
@@ -1288,12 +1230,6 @@ body {
     max-width: max-content;
     margin-inline: auto;
   }
-
-
-
-  /**
-   * UPCOMING
-   */
 
   .upcoming-card .card-banner {
     max-height: 180px;
@@ -1312,12 +1248,6 @@ body {
     --fontSize-1: 6.2rem;
   }
 
-
-
-  /**
-   * FOOTER
-   */
-
   .footer-top .container {
     grid-template-columns: 1f 0.5fr 0.5fr 1fr;
   }
@@ -1326,4 +1256,9 @@ body {
     width: 205px;
   }
 
+  /* EQUIPO */
+
+  .card {
+    width: 20%; /* Cinco tarjetas en fila en pantallas extra grandes */
+  }
 }
