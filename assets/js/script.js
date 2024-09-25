@@ -124,19 +124,28 @@ addEventOnElements(hoverElements, "mouseout", function () {
  * Carrusel
  */
 
-const next=document.querySelector('#next')
-const prev=document.querySelector('#prev')
+const next = document.querySelector('#next');
+const prev = document.querySelector('#prev');
 
-function handleScrollNext (direction) {
-  const cards = document.querySelector('.card-content')
-  cards.scrollLeft=cards.scrollLeft += window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100
+function handleScrollNext() {
+  const cards = document.querySelector('.card-content');
+  const cardWidth = 360; // Ajusta este valor según el tamaño de tus cards
+  cards.scrollLeft += cardWidth; // Desplazamiento hacia adelante
 }
 
-function handleScrollPrev (direction) {
-  const cards = document.querySelector('.card-content')
-  cards.scrollLeft=cards.scrollLeft -= window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100
+function handleScrollPrev() {
+  const cards = document.querySelector('.card-content');
+  const cardWidth = 350; // Ajusta este valor según el tamaño de tus cards
+
+  // Asegurarse de que no se desplace más allá del inicio
+  cards.scrollLeft -= cardWidth; // Desplazamiento hacia atrás
+
+  // Si se sobrepasa el inicio, ajustar a la primera posición
+  if (cards.scrollLeft < 0) {
+    cards.scrollLeft = 0;
+  }
 }
 
-next.addEventListener('click', handleScrollNext)
-prev.addEventListener('click', handleScrollPrev)
+next.addEventListener('click', handleScrollNext);
+prev.addEventListener('click', handleScrollPrev);
 
